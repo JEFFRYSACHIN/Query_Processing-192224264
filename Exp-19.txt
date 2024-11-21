@@ -1,0 +1,17 @@
+# Load the World alcohol consumption dataset (assuming it's a CSV file)
+# For demonstration purposes, let's create a sample DataFrame
+data = {
+    'Country': ['Country A', 'Country B', 'Country C'],
+    'Alcohol_Consumption': [12.5, 8.7, 10.3],
+    'Year': [2010, 2010, 2010]
+}
+
+df = pd.DataFrame(data)
+
+# Display the shape of the DataFrame
+print("Shape of the World alcohol consumption dataset:")
+print(df.shape)  # This will give (number of rows, number of columns)
+
+# Extract and display the column names
+print("\nColumn names in the dataset:")
+print(df.columns.tolist())

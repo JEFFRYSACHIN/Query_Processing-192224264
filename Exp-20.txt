@@ -1,0 +1,16 @@
+# Create a sample DataFrame
+data = {
+    'Names': ['Alice', 'Bob', 'Charlie', 'David', 'Eve', 'Frank', 'Grace']
+}
+
+df = pd.DataFrame(data)
+
+# Define the substring to search for
+substring = 'ar'
+
+# Find the index of rows containing the substring in the 'Names' column
+indices = df[df['Names'].str.contains(substring)].index.tolist()
+
+# Display the indices
+print(f"Indices of rows containing the substring '{substring}':")
+print(indices)

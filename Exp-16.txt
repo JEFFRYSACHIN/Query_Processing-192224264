@@ -1,0 +1,30 @@
+import pandas as pd
+
+# Create a sample DataFrame
+data = {
+    'School_Code': ['A', 'B', 'A', 'B', 'C', 'A', 'C'],
+    'Student_Name': ['Alice', 'Bob', 'Charlie', 'David', 'Eve', 'Frank', 'Grace'],
+    'Score': [85, 90, 78, 88, 92, 95, 80]
+}
+
+df = pd.DataFrame(data)
+
+# Display the original DataFrame
+print("Original DataFrame:")
+print(df)
+
+# Group the DataFrame by 'School_Code'
+grouped = df.groupby('School_Code')
+
+# Check the type of the GroupBy object
+groupby_type = type(grouped)
+
+# Display the type of the GroupBy object
+print("\nType of GroupBy object:")
+print(groupby_type)
+
+# (Optional) Display the groups
+print("\nGroups:")
+for name, group in grouped:
+    print(f"\nGroup: {name}")
+    print(group)

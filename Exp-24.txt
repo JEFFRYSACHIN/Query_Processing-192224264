@@ -1,0 +1,34 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load the financial data from CSV
+data = pd.read_csv('fdata.csv')
+
+# Convert the 'Date' column to datetime format
+data['Date'] = pd.to_datetime(data['Date'], format='%m-%d-%y')
+
+# Set the 'Date' column as the index
+data.set_index('Date', inplace=True)
+
+# Filter the data for the specified date range
+filtered_data = data.loc['2016-10-03':'2016-10-07']
+
+# Plotting the data
+plt.figure(figsize=(10, 6))
+
+# Plot each line
+plt.plot(filtered_data.index, filtered_data['Open'], marker='o', label='Open Price')
+plt.plot(filtered_data.index, filtered_data['High'], marker='o', label='High Price')
+plt.plot(filtered_data.index, filtered_data['Low'], marker='o', label='Low Price')
+plt.plot(filtered_data.index, filtered_data['Close'], marker='o', label='Close Price')
+
+# Adding title and labels
+plt.title('Alphabet Inc. Financial Data (Oct 3 - Oct 7, 2016)')
+plt.xlabel('Date')
+plt.ylabel('Price (USD)')
+plt.legend()
+plt.grid()
+
+# Show the plot
+plt.tight_layout()
+plt.show()

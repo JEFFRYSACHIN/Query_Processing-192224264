@@ -1,0 +1,29 @@
+import pandas as pd
+import numpy as np
+
+# Create a DataFrame with some missing values
+data = {
+    'A': [1, 2, np.nan, 4],
+    'B': [np.nan, 2, 3, 4],
+    'C': [1, 2, 3, 4],
+    'D': [np.nan, np.nan, 3, 4]
+}
+
+df = pd.DataFrame(data)
+
+# Display the original DataFrame
+print("Original DataFrame:")
+print(df)
+
+# Replace missing values with a specified value (e.g., 0)
+df_filled_0 = df.fillna(0)
+
+# Alternatively, replace missing values with the mean of each column
+df_filled_mean = df.fillna(df.mean())
+
+# Display the DataFrames after filling missing values
+print("\nDataFrame after replacing missing values with 0:")
+print(df_filled_0)
+
+print("\nDataFrame after replacing missing values with the mean of each column:")
+print(df_filled_mean)

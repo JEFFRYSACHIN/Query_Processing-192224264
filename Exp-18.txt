@@ -1,0 +1,17 @@
+# Create a sample DataFrame with 'Class' column
+data = {
+    'School_Code': ['A', 'B', 'A', 'B', 'C', 'A', 'C'],
+    'Class': ['10', '10', '9', '9', '10', '10', '9'],
+    'Student_Name': ['Alice', 'Bob', 'Charlie', 'David', 'Eve', 'Frank', 'Grace']
+}
+
+df = pd.DataFrame(data)
+
+# Group by 'School_Code' and 'Class'
+grouped = df.groupby(['School_Code', 'Class'])
+
+# Display the groups
+print("Groups based on School Code and Class:")
+for (school_code, class_name), group in grouped:
+    print(f"\nGroup: School Code = {school_code}, Class = {class_name}")
+    print(group)

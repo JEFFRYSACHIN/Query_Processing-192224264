@@ -1,0 +1,17 @@
+import matplotlib.pyplot as plt
+
+# Sample data for the line plot
+x = [1, 2, 3, 4, 5]  # X-axis values
+y = [2, 3, 5, 7, 11]  # Y-axis values
+
+# Create a line plot
+plt.plot(x, y, marker='o')  # 'marker' adds points at each data point
+
+# Adding labels and title
+plt.xlabel('X Axis Label')  # Label for the x-axis
+plt.ylabel('Y Axis Label')  # Label for the y-axis
+plt.title('Line Plot Title')  # Title of the plot
+
+# Show the plot
+plt.grid()  # Optional: Add grid lines for better readability
+plt.show()

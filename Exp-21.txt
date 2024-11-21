@@ -1,0 +1,20 @@
+import pandas as pd
+
+# Create a sample DataFrame
+data = {
+    'Names': ['Alice', 'Bob', 'CHARLIE', 'David', 'eve', 'FRANK', 'Grace'],
+    'Scores': [85, 90, 78, 88, 92, 95, 80]
+}
+
+df = pd.DataFrame(data)
+
+# Display the original DataFrame
+print("Original DataFrame:")
+print(df)
+
+# Swap the cases of the 'Names' column
+df['Names'] = df['Names'].str.swapcase()
+
+# Display the modified DataFrame
+print("\nDataFrame after swapping cases in the 'Names' column:")
+print(df)

@@ -1,0 +1,44 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Sample data
+x = np.linspace(0, 10, 100)  # X values from 0 to 10
+y1 = np.sin(x)                # Sine wave
+y2 = np.cos(x)                # Cosine wave
+y3 = np.tan(x)                # Tangent wave
+
+# Create subplots
+fig, axs = plt.subplots(3, 1, figsize=(10, 12))  # 3 rows, 1 column
+
+# Plotting the sine wave
+axs[0].plot(x, y1, color='blue', label='Sine Wave')
+axs[0].set_title('Sine Wave')
+axs[0].set_xlabel('X-axis')
+axs[0].set_ylabel('Y-axis')
+axs[0].legend()
+axs[0].grid()
+
+# Plotting the cosine wave
+axs[1].plot(x, y2, color='orange', label='Cosine Wave')
+axs[1].set_title('Cosine Wave')
+axs[1].set_xlabel('X-axis')
+axs[1].set_ylabel('Y-axis')
+axs[1].legend()
+axs[1].grid()
+
+# Plotting the tangent wave
+axs[2].plot(x, y3, color='green', label='Tangent Wave')
+axs[2].set_title('Tangent Wave')
+axs[2].set_xlabel('X-axis')
+axs[2].set_ylabel('Y-axis')
+
+# Set limits for tangent wave for better visualization
+axs[2].set_ylim(-10, 10)
+axs[2].legend()
+axs[2].grid()
+
+# Adjust layout
+plt.tight_layout()
+
+# Display the plots
+plt.show()

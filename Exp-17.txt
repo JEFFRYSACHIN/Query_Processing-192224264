@@ -1,0 +1,17 @@
+import pandas as pd
+
+# Create a sample DataFrame
+data = {
+    'School_Code': ['A', 'B', 'A', 'B', 'C', 'A', 'C'],
+    'Student_Name': ['Alice', 'Bob', 'Charlie', 'David', 'Eve', 'Frank', 'Grace'],
+    'Age': [14, 15, 13, 14, 16, 15, 16]
+}
+
+df = pd.DataFrame(data)
+
+# Group by 'School_Code' and calculate mean, min, and max of 'Age'
+age_stats = df.groupby('School_Code')['Age'].agg(['mean', 'min', 'max']).reset_index()
+
+# Display the result
+print("Mean, Min, and Max Age for each School:")
+print(age_stats)

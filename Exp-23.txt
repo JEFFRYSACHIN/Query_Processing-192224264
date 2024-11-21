@@ -1,0 +1,40 @@
+import matplotlib.pyplot as plt
+
+# Function to read data from a text file
+def read_data_from_file(filename):
+    x_values = []
+    y_values = []
+    
+    with open(filename, 'r') as file:
+        for line in file:
+            # Split the line into x and y values
+            x, y = map(float, line.split())
+            x_values.append(x)
+            y_values.append(y)
+    
+    return x_values, y_values
+
+# Main function
+def main():
+    filename = 'test.txt'
+    
+    # Read data from the file
+    x_values, y_values = read_data_from_file(filename)
+    
+    # Create a line plot
+    plt.plot(x_values, y_values, marker='o')
+    
+    # Set the labels and title
+    plt.xlabel('X Axis Label')
+    plt.ylabel('Y Axis Label')
+    plt.title('Line Plot from Text File Data')
+    
+    # Show grid
+    plt.grid(True)
+    
+    # Display the plot
+    plt.show()
+
+# Run the program
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,26 @@
+import matplotlib.pyplot as plt
+
+# Sample data
+programming_languages = ['Java', 'Python', 'PHP', 'JavaScript', 'C#', 'C++']
+popularity = [22.2, 17.6, 8.8, 8.0, 7.7, 6.7]
+
+# Define a list of colors for each bar
+colors = ['blue', 'orange', 'green', 'red', 'purple', 'cyan']
+
+# Create the bar chart
+plt.figure(figsize=(10, 6))
+bars = plt.bar(programming_languages, popularity, color=colors)
+
+# Adding titles and labels
+plt.title('Popularity of Programming Languages')
+plt.xlabel('Programming Languages')
+plt.ylabel('Popularity (%)')
+
+# Display the percentage on top of the bars
+for bar in bars:
+    yval = bar.get_height()
+    plt.text(bar.get_x() + bar.get_width()/2, yval + 0.3, round(yval, 1), ha='center', va='bottom')
+
+# Show the plot
+plt.tight_layout()
+plt.show()

@@ -1,0 +1,14 @@
+import pandas as pd
+import numpy as np
+
+# Create a dataframe with 10 rows and 4 columns
+df = pd.DataFrame(np.random.randn(10, 4), columns=list('ABCD'))
+
+# Convert some values to NaN
+df.iloc[0, 2] = np.nan
+df.iloc[3, 3] = np.nan
+df.iloc[4, 1] = np.nan
+df.iloc[9, 4] = np.nan
+
+# Highlight NaN values in the DataFrame
+df.style.highlight_null(null_color='red')
